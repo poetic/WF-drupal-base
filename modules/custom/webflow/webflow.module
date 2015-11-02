@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function fpn_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'custom-panes';
+  }
+}
+function fpn_theme($existing, $type, $theme, $path) {
+	$panes = array('latest-blog','taxonomy', 'social', 'footer', 'secondary', );
+	$theme = array();
+
+	foreach ($panes as $pane) {
+		$theme[$pane] = array(
+	    'path' => drupal_get_path('module', 'webflow') . "/custom-panes/$pane",
+	    'template' => $pane,
+	  );
+	}
+  return $theme;
+}
+// function fpn_form_alter(&$form, &$form_state, $form_id) {
+//   if ($form_id == 'webform_client_form_2') {
+//     $form['actions']['submit']['#attributes']['class'][] = 'w-button button';
+//   }
+// }
+
+

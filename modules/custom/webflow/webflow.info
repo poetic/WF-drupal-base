@@ -1,0 +1,3 @@
+name = Webflow
+description = Site module that contain a list of custom panes
+core = 7.x

@@ -1,0 +1,12 @@
+name = Webflow Layouts
+description = Webflow clean layout
+core = 7.x
+
+dependencies[] = panels
+stylesheets[all][] = webflow_layouts.css
+
+; Information added by Drupal.org packaging script on 2015-06-10
+version = "7.x-3.4"
+core = "7.x"
+project = "webflow_layouts"
+

@@ -1,4 +1,4 @@
-name = Webflow
+name = Webflow theme
 description = Simple theme that works with Webflow
 core = 7.x
 engine = phptemplate

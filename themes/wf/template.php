@@ -1,16 +1,16 @@
 <?php
 
-// function webflow_preprocess_html(&$variables) {
+// function wf_preprocess_html(&$variables) {
 //   drupal_add_js('https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js', array('type' => 'external'));
 //   drupal_add_js('WebFont.load({google: {families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic"]}});', 'inline');
 // }
 
-function webflow_preprocess_node(&$vars) {
+function wf_preprocess_node(&$vars) {
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'];
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
   
 }
-function webflow_preprocess_image(&$variables) {
+function wf_preprocess_image(&$variables) {
   if(isset($variables['style_name'])) {
     if($variables['style_name'] == 'blog-teaser') {
       $variables['attributes']['class'][] = "blog-article-thumbnail";
@@ -19,7 +19,7 @@ function webflow_preprocess_image(&$variables) {
   }
   //var_dump($variables);
 }
-function webflow_pager($variables) {
+function wf_pager($variables) {
   $tags = $variables['tags'];
   $element = $variables['element'];
   $parameters = $variables['parameters'];

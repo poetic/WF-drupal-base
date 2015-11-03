@@ -3,13 +3,13 @@
 /**
  * Implements hook_ctools_plugin_directory().
  */
-function fpn_ctools_plugin_directory($owner, $plugin_type) {
+function webflow_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return 'custom-panes';
   }
 }
-function fpn_theme($existing, $type, $theme, $path) {
-	$panes = array('latest-blog','taxonomy', 'social', 'footer', 'secondary', );
+function webflow_theme($existing, $type, $theme, $path) {
+	$panes = array('footer', 'secondary', );
 	$theme = array();
 
 	foreach ($panes as $pane) {
@@ -20,7 +20,7 @@ function fpn_theme($existing, $type, $theme, $path) {
 	}
   return $theme;
 }
-// function fpn_form_alter(&$form, &$form_state, $form_id) {
+// function webflow_form_alter(&$form, &$form_state, $form_id) {
 //   if ($form_id == 'webform_client_form_2') {
 //     $form['actions']['submit']['#attributes']['class'][] = 'w-button button';
 //   }

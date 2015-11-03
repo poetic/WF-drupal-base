@@ -7,7 +7,7 @@ $plugin = array(
   // 'single' => TRUE,
   'title' => t(''.$pane_name.''),
   'description' => t(''.$pane_name.''),
-  'category' => t('Home Page'),
+  'category' => t('Custom Panes'),
   'edit form' => ''.$form_name.'_edit_form',
   'render callback' => ''.$form_name.'_render',
   // need to have default value

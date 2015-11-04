@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Webflow -> Drupal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="bootstrap.css" media="screen">
+    <link rel="stylesheet" href="assets/css/custom.min.css">
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">Webflow -> Drupal</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="code">Custom Pane <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="code">
+                <li><a href="custom-pane.html">custom pane code</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="jumbotron">
+  <h1>Custom Panes</h1>
+  <p>Let get to it.</p>
+  <p><a href="#files" class="btn btn-primary btn-lg">Start here</a></p>
+</div>
+
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>Directory</h1>
+            <p class="lead">Easy to follow steps</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="list-group table-of-contents">          
+              <a class="list-group-item" href="#site">spin up new site</a>
+              <a class="list-group-item" href="#drush">First drush commands</a>
+              <a class="list-group-item" href="#enable">enable</a>
+              <a class="list-group-item" href="#files">Webflow Files</a>
+              <a class="list-group-item" href="#add">Add files</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+
+
+      <!-- Site
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="site">Setting up new site</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <img src="images/site.gif" alt="files">
+          </div>
+        </div>
+      </div>
+
+        <!-- drush
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="drush">First drush commands</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <pre>drush use @abc-com</pre>
+            <pre>drush uli</pre>
+            <img src="images/drush.png" alt="files">
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="enable">Enable</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headings -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div>
+              <blockquote>
+                <pre>/admin/appearance</pre>
+              <p>Enable the webflow theme and set as defult</p>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div>
+              <blockquote>
+                <pre>/admin/modules?filter=web</pre>
+              <p>Enable webflow and webflow_layout modules</p>
+              </blockquote>
+            </div>
+          </div>
+
+           <div class="col-lg-12">
+            <div>
+              <blockquote>
+                <pre>/admin/structure/pages</pre>
+              <p>Enable Default site template</p>
+              <p>Click edit<br />
+                » Add a new variant<br />
+                create variant<br />
+                select layout use webflow “clean”
+              </p>
+              </blockquote>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+        <!-- drush
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="drush">Hello there! Custom Pane, You should be here...</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <img src="images/custompane.gif">
+          </div>
+        </div>
+      </div>
+
+
+
+       <!-- File
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="files">Webflow Files</h1>
+            </div>
+            <img src="images/files.png" alt="files">
+          </div>
+        </div>
+      </div>
+
+
+         <!-- drush
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 id="add">now what?...</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>now add css and javacript files to the drupal theme..</h2>
+            <p>keep main.webflow.css file do not replace it, just open it and add the css there.. wait your not done yet with that file..</p>
+            <p>replace all <pre>../images</pre> with: <pre>/files/images</pre></p>
+
+            <img src="images/css.png">
+          </div>
+        </div>
+      </div>
+
+       <div class="row">
+          <div class="col-lg-12">
+            <div>
+                <h2>now you know what to do with the images</h2>
+              <p>drop them in the files folder on the drupal directory /files</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+         <div class="panel panel-warning">
+            <div class="panel-heading">
+             <h3 class="panel-title">webflow.js</h3>
+            </div>
+            <div class="panel-body">
+              add JS content under the comment please..
+              <img src="images/comment.png">
+            </div>
+          </div>
+        </div>
+
+       <div class="row">
+          <div class="col-lg-12">
+            <div>
+                <h2>Congrats now you have a webflow -> drupal theme</h2>
+              <p>Now let get to the custom Pane Code</p>
+            </div>
+          </div>
+        </div>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">           
+            <!-- <p>Made by Juan Cubeddu</p> -->
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

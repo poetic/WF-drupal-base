@@ -260,11 +260,9 @@ function footer_render($subtype, $conf, $panel_args, $context = NULL) {
   }
 
   $new_field = $conf['new_field'];
-
   $test_field = $conf['test_field']['value'];
   
   $better_field = $conf['better_field'];
-  //images need this to render url instead of an interger..
   if($conf['better_field']!= 0) {
     $file = file_load($conf['better_field']);
     $file_url = file_create_url($file->uri);
@@ -275,7 +273,6 @@ function footer_render($subtype, $conf, $panel_args, $context = NULL) {
   $block->title = '';
   // call your varible inside the array ('logo' => $logo,)
   $block->content = theme('footer', array('logo' => $logo, 'email' => $email, 'poetic' => $poetic, 'new_field' => $new_field, 'test_field' => $test_field, 'better_field' => $better_field));
-  // $block->content = theme('footer', array('logo' => $logo, 'email' => $email, 'poetic' => $poetic));
   return $block;
 }
             </pre>

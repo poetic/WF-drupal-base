@@ -281,6 +281,97 @@ function footer_render($subtype, $conf, $panel_args, $context = NULL) {
 
         <div class="row">
           <div class="col-lg-12">
+            <h1>The TPL..</h1>
+            <h2>from this:</h2>
+            <pre>
+
+    <div class="w-section main-section footer">
+      <div class="w-container">
+        <div class="w-row">
+          <div class="w-col w-col-6 two-column-tablet">
+            <img class="logo footer" src="http://fitpronow-com.local/sites/fitpronow.com/files/usage/full_logo-white_0.svg">
+            <a class="link email" href="mailto:hello@fitpronow.com">hello@fitpronow.com</a>
+          </div>
+          <div class="w-col w-col-6 column-left">
+            <a class="w-inline-block" href="http://www.poeticsystems.com/" target="_blank">
+              <img src="http://fitpronow-com.local/sites/fitpronow.com/files/usage/built-by-poetic.svg"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+            </pre>
+            <h2>to:</h2>
+            <pre>
+<!-- need this to show gear in the front-end for eady edit -->
+<div class="masthead-inner">
+  <div class="content contextual-links-region">
+    <?php print $contextual_links; ?>
+<!-- need this to show gear in the front-end for eady edit -->
+
+<!-- webflow section html content -->
+<!-- replace text or images with the varible belonging to them -->
+      <div class="w-section main-section footer">
+          <div class="w-container">
+            <div class="w-row">
+              <div class="w-col w-col-6 two-column-tablet">
+                <?php print '<img class="logo footer" src="'. $logo.'" >'; ?>
+                <a class="link email" href="mailto:<?php print $email; ?>"><?php print $email; ?></a>
+              </div>
+              <div class="w-col w-col-6 column-left">
+                <a class="w-inline-block" href="http://www.poeticsystems.com/" target="_blank"><?php print '<img src="'. $poetic.'" >'; ?>
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+<!-- webflow section html content -->
+
+<!-- need this to show gear in the front-end for eady edit -->
+     </div>
+   </div>
+<!-- need this to show gear in the front-end for eady edit -->
+            </pre>
+            <h1>new fields</h1>
+            <pre>
+<!-- need this to show gear in the front-end for eady edit -->
+<div class="masthead-inner">
+  <div class="content contextual-links-region">
+    <?php print $contextual_links; ?>
+<!-- need this to show gear in the front-end for eady edit -->
+
+<!-- webflow section html content -->
+<!-- replace text or images with the varible belonging to them -->
+      <div class="w-section main-section footer">
+          <div class="w-container">
+            <div class="w-row">
+              <div class="w-col w-col-6 two-column-tablet">
+                <?php print '<img class="logo footer" src="'. $logo.'" >'; ?>
+                <a class="link email" href="mailto:<?php print $email; ?>"><?php print $email; ?></a>
+              </div>
+              <div><?php print $new_field; ?></div>
+              <div><?php print $test_field; ?></div>
+              <div><?php print '<img src="'. $better_field.'" >'; ?></div>
+              <div class="w-col w-col-6 column-left">
+                <a class="w-inline-block" href="http://www.poeticsystems.com/" target="_blank"><?php print '<img src="'. $poetic.'" >'; ?>
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+<!-- webflow section html content -->
+
+<!-- need this to show gear in the front-end for eady edit -->
+     </div>
+   </div>
+<!-- need this to show gear in the front-end for eady edit -->
+            </pre>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-12">
             <h1>Function names most be unique..</h1>
             <img src="images/function.png" alt="files">
           </div>

@@ -87,7 +87,7 @@
           <div class="row">
             <div class="col-lg-12">
               <h1 id="drush">create your first custom pane</h1>
-              <p>create new folder make sure to name folder and files the same see image bellow:</p>
+              <p>create a new folder make sure to name the folder and files the same see image bellow:</p>
               <img src="images/name.png" alt="files">
             </div>
           </div>
@@ -100,9 +100,76 @@
           </div>
         </div>
 
+
         <div class="row">
           <div class="col-lg-12">
-            <h1>add your new custom pane Ex. </h1>
+            <h1>let's start!</h1>
+            <ul>
+              <li>Title: name of the custom pane</li>
+              <li>Description: description of the custom pane</li>
+              <li>category: where does the custom pane belongs: front page, about, footer</li>
+              <li>edit form: name of the edit function</li>
+              <li>render callback: name of the render function</li>
+              <li>defaults: fields you want the custom pane to have..</li>
+            </ul>
+            <p></p>
+            <pre>  $plugin = array(
+                  // 'single' => TRUE,
+                  'title' => t(''.$pane_name.''),
+                  'description' => t(''.$pane_name.''),
+                  'category' => t('Custom Panes'),
+                  'edit form' => ''.$form_name.'_edit_form',
+                  'render callback' => ''.$form_name.'_render',
+                  // need to have default value
+                  'defaults' => array(
+                    'logo' => '',
+                    'email' => '',
+                    'poetic' => '',
+
+                  )
+                );
+            </pre>
+            <p>you need to add more fields? start here</p>
+            <pre>  
+                  'defaults' => array(
+                    'logo' => '',
+                    'email' => '',
+                    'poetic' => '',
+                    'new_field' => '';
+                    'test_field' => '';
+                    'better_field' => '';
+
+                  )
+            </pre>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Function names most be unique..</h1>
+            <img src="images/function.png" alt="files">
+          </div>
+        </div>
+
+        $plugin = array(
+  // 'single' => TRUE,
+  'title' => t(''.$pane_name.''),
+  'description' => t(''.$pane_name.''),
+  'category' => t('Custom Panes'),
+  'edit form' => ''.$form_name.'_edit_form',
+  'render callback' => ''.$form_name.'_render',
+  // need to have default value
+  'defaults' => array(
+    'logo' => '',
+    'email' => '',
+    'poetic' => '',
+
+  )
+);
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>add your new custom pane under $panes array Ex. </h1>
             <pre>'secondary'</pre>
             <img src="images/add-custom.png" alt="files">
           </div>

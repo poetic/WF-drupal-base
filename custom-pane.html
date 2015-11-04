@@ -107,7 +107,7 @@
               <li>defaults: fields you want the custom pane to have..</li>
             </ul>
             <p></p>
-            <pre>  $plugin = array(
+            <pre> $plugin = array(
                   // 'single' => TRUE,
                   'title' => t(''.$pane_name.''),
                   'description' => t(''.$pane_name.''),
@@ -129,11 +129,105 @@
                     'logo' => '',
                     'email' => '',
                     'poetic' => '',
-                    'new_field' => '';
-                    'test_field' => '';
-                    'better_field' => '';
+                    'new_field' => '',
+                    'test_field' => '',
+                    'better_field' => '',
 
                   )
+            </pre>
+          </div>
+        </div>
+
+         <div class="row">
+          <div class="col-lg-12">
+            <h1>The Edit form function:</h1>
+            <pre>function footer_edit_form($form, &$form_state) {
+  $conf = $form_state['conf'];
+  //field logo
+  $form['logo'] = array(
+    //title
+    '#title'  =>  t('logo'),
+    //type please read (https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7#type).
+    '#type' => 'managed_file',
+    //most commonly use text_format, textfield, fieldset, managed_file
+    '#upload_location' => 'public://usage/',
+    //description of the field this will show in the Pane
+    '#description' => t('Upload Logo'),
+    //validation for uplaod field.
+    "#upload_validators"  => array("file_validate_extensions" => array("png gif jpg svg")),
+    //default value so is value is not empty get the vaule from the field else is null
+    '#default_value' => !empty($conf['logo']) ? $conf['logo'] : null
+  );
+
+  //  ckedito type field
+  //  $form['longtext'] = array(
+  //   '#title'  =>  t('longtext'),
+  //   '#type' => 'text_format',
+  //   '#default_value' => !empty($conf['longtext']['value']) ? $conf['longtext']['value'] : null,
+   //  other formats: full_html, no_formatting, filtered_html, plain_text
+  //   '#format' => 'full_html'
+  // );
+
+  $form['email'] = array(
+    '#title'  =>  t('email'),
+    '#type' => 'textfield',
+    '#default_value' => isset($conf['email']) ? $conf['email'] : null,
+  );
+  $form['poetic'] = array(
+    '#title'  =>  t('poetic logo'),
+    '#type' => 'managed_file',
+    '#upload_location' => 'public://usage/',
+    '#description' => t('Upload poetic logo'),
+    "#upload_validators"  => array("file_validate_extensions" => array("png gif jpg svg")),
+    '#default_value' => !empty($conf['poetic']) ? $conf['poetic'] : null
+  );
+
+  ctools_form_include($form_state, 'content');
+  // Include this plugin file as well, so that when the form is rebuilt, it
+  // can successfully retrieve the settings form.
+  //must changer per custom pane: name 'footer', 'custom-panes/footer' EX:
+  //($form_state,'newcustom', 'webflow', 'custom-panes/newcustom');
+  ctools_form_include($form_state,'footer', 'webflow', 'custom-panes/footer');
+
+  return $form;
+
+}
+            </pre>
+            <p>Remember those new fields</p>
+            <pre>
+              $form['new_field'] = array(
+    //title
+    '#title'  =>  t('new_field'),
+    //type please read (https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7#type).
+    '#type' => 'textfield',
+    //most commonly use text_format, textfield, fieldset, managed_file
+    //default value so is value is not empty get the vaule from the field else is null
+    '#default_value' => !empty($conf['new_field']) ? $conf['new_field'] : null
+  );
+   $form['test_field'] = array(
+    //title
+    '#title'  =>  t('test field'),
+    //type please read (https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7#type).
+    '#type' => 'text_format',
+    //most commonly use text_format, textfield, fieldset, managed_file
+    '#description' => t('Upload Logo'),
+    //default value so is value is not empty get the vaule from the field else is null
+    '#default_value' => !empty($conf['test_field']['value']) ? $conf['test_field']['value'] : null
+  );
+    $form['better_field'] = array(
+    //title
+    '#title'  =>  t('better field'),
+    //type please read (https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7#type).
+    '#type' => 'managed_file',
+    //most commonly use text_format, textfield, fieldset, managed_file
+    '#upload_location' => 'public://usage/',
+    //description of the field this will show in the Pane
+    '#description' => t('better field'),
+    //validation for uplaod field.
+    "#upload_validators"  => array("file_validate_extensions" => array("png gif jpg svg")),
+    //default value so is value is not empty get the vaule from the field else is null
+    '#default_value' => !empty($conf['better_field']) ? $conf['better_field'] : null
+  );
             </pre>
           </div>
         </div>

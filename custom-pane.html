@@ -232,6 +232,56 @@ $form['new_field'] = array(
           </div>
         </div>
 
+         <div class="row">
+          <div class="col-lg-12">
+            <h1>The Render function:</h1>
+            <img src="images/render.png" alt="files">
+
+            <pre>
+function footer_render($subtype, $conf, $panel_args, $context = NULL) {
+  $block = new stdClass();
+//create varible for each field
+  $logo = $conf['logo'];
+  //images need this to render url instead of an interger..
+  if($conf['logo']!= 0) {
+    $file = file_load($conf['logo']);
+    $file_url = file_create_url($file->uri);
+    $logo = $file_url;
+  }
+//create varible for each field
+  $email = $conf['email'];
+//create varible for each field
+  $poetic = $conf['poetic'];
+  //images need this to render url instead of an interger..
+  if($conf['poetic']!= 0) {
+    $file = file_load($conf['poetic']);
+    $file_url = file_create_url($file->uri);
+    $poetic = $file_url;
+  }
+
+  $new_field = $conf['new_field'];
+
+  $test_field = $conf['test_field']['value'];
+  
+  $better_field = $conf['better_field'];
+  //images need this to render url instead of an interger..
+  if($conf['better_field']!= 0) {
+    $file = file_load($conf['better_field']);
+    $file_url = file_create_url($file->uri);
+    $better_field = $file_url;
+  }
+
+
+  $block->title = '';
+  // call your varible inside the array ('logo' => $logo,)
+  $block->content = theme('footer', array('logo' => $logo, 'email' => $email, 'poetic' => $poetic, 'new_field' => $new_field, 'test_field' => $test_field, 'better_field' => $better_field));
+  // $block->content = theme('footer', array('logo' => $logo, 'email' => $email, 'poetic' => $poetic));
+  return $block;
+}
+            </pre>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-lg-12">
             <h1>Function names most be unique..</h1>
@@ -252,6 +302,12 @@ $form['new_field'] = array(
             <h1>add your new custom pane under $panes array Ex: </h1>
             <pre>'secondary'</pre>
             <img src="images/add-custom.png" alt="files">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Congrat custom pane One is ready!</h1>
           </div>
         </div>
 
